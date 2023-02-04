@@ -25,6 +25,11 @@ public class enemySpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.currentGameState == gameManager.gameState.paused)
+        {
+            return;
+        }
+
         if (gameManager.currentGameState == gameManager.gameState.playing)
         {
             bugInterval = 1 / (0.7f * Mathf.Log(gameManager.difficulty + 1));
