@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class characterController : MonoBehaviour
 {
-
+    public gameManager gameManager;
     //public Transform playerTransform;
     public Rigidbody2D playerRigidbody;
     public int speed;
@@ -17,7 +17,7 @@ public class characterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<gameManager>();
     }
 
     // Update is called once per frame

@@ -13,6 +13,8 @@ public class gameManager : MonoBehaviour
 
     public float difficulty = 1;
 
+    public int killCounter = 0;
+
     float timeSinceLastDiffIncrease = 0;
 
     // Start is called before the first frame update
