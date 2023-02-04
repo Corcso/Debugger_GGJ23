@@ -28,14 +28,20 @@ public class MainMenuScript : MonoBehaviour
     }
 
     public GameObject optionsMenuObject;
+    public GameObject controlsButton;
+    public GameObject quitButton;
     public void ShowControls()
     {
         optionsMenuObject.SetActive(true);
+        controlsButton.SetActive(false);
+        quitButton.SetActive(false);
 
     }
 
     public void HideOptions()
     {
         optionsMenuObject.SetActive(false);
+        controlsButton.SetActive(true);
+        quitButton.SetActive(true);
     }
 }
