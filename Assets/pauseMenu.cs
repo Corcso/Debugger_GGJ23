@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pauseMenu : MonoBehaviour
 {
@@ -27,4 +28,8 @@ public class pauseMenu : MonoBehaviour
         previousEsc = Input.GetAxis("Cancel");
     }
 
+    public void QuitMenu()
+    {
+        SceneManager.LoadScene("Title_Scene");
+    }
 }
