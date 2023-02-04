@@ -89,7 +89,7 @@ public class characterController : MonoBehaviour
             playerHealth--;
             Rigidbody2D enemyRigidbody = col.gameObject.GetComponent<Rigidbody2D>();
 
-            enemyRigidbody.AddForce(col.gameObject.transform.right * -500);
+            enemyRigidbody.AddForce(col.gameObject.transform.up * -500);
 
             
         }
