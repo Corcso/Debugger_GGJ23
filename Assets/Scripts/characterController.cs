@@ -87,6 +87,11 @@ public class characterController : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             playerHealth--;
+            Rigidbody2D enemyRigidbody = col.gameObject.GetComponent<Rigidbody2D>();
+
+            enemyRigidbody.AddForce(col.gameObject.transform.right * -500);
+
+            
         }
     }
 }
