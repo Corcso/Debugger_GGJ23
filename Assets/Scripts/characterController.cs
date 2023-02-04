@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class characterController : MonoBehaviour
 {
-
+    public gameManager gameManager;
     //public Transform playerTransform;
     public Rigidbody2D playerRigidbody;
     public int speed;
@@ -17,12 +17,17 @@ public class characterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<gameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (gameManager.currentGameState == gameManager.gameState.paused)
+        {
+            return;
+        }
 
         // Control X and Y movement
         float horizontalAxis = Input.GetAxis("Horizontal");
@@ -51,7 +56,7 @@ public class characterController : MonoBehaviour
 
         
         if (Input.GetButton("Fire1") && !previousFireButton) {
-            Debug.Log("FIRE");
+            //Debug.Log("FIRE");
             fireRegular();
         }
 
@@ -73,11 +78,11 @@ public class characterController : MonoBehaviour
         GameObject firedBullet;
         if (choice == 0)
         {
-            firedBullet = Instantiate(zeroBulletPrefab, this.transform.position + this.transform.up / 1.7f , Quaternion.Euler(0, 0, this.transform.rotation.eulerAngles.z + 90));
+            firedBullet = Instantiate(zeroBulletPrefab, this.transform.position + this.transform.up / 1.3f , Quaternion.Euler(0, 0, this.transform.rotation.eulerAngles.z + 90));
         }
         else
         {
-            firedBullet = Instantiate(oneBulletPrefab, this.transform.position + this.transform.up / 1.7f, Quaternion.Euler(0, 0, this.transform.rotation.eulerAngles.z + 90));
+            firedBullet = Instantiate(oneBulletPrefab, this.transform.position + this.transform.up / 1.3f, Quaternion.Euler(0, 0, this.transform.rotation.eulerAngles.z + 90));
         }
         Destroy(firedBullet, 3);
     }
