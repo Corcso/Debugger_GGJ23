@@ -8,13 +8,13 @@ public class MainMenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Function to Quit the game
@@ -32,5 +32,10 @@ public class MainMenuScript : MonoBehaviour
     {
         optionsMenuObject.SetActive(true);
 
+    }
+
+    public void HideOptions()
+    {
+        optionsMenuObject.SetActive(false);
     }
 }
