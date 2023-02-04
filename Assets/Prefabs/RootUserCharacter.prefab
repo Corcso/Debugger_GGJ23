@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 2116787085454171681}
   speed: 900
+  playerHealth: 5
   zeroBulletPrefab: {fileID: 9101529235323299904, guid: 3878b383459efe049827d76f034be8dc, type: 3}
   oneBulletPrefab: {fileID: 2311654321899998105, guid: 5cd1ddda869202e4eb2e0c5d5547b13c, type: 3}
 --- !u!61 &2116787085454171682
