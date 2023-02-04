@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 1407207653}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -279,11 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 419618614}
-  zeroBullet: {fileID: 9101529235323299906, guid: 3878b383459efe049827d76f034be8dc, type: 3}
-  oneBullet: {fileID: 2311654321899998106, guid: 5cd1ddda869202e4eb2e0c5d5547b13c, type: 3}
   enemyRigidbody: {fileID: 1407207652}
   speed: 600
-  enemyHealth: 0
+  enemyHealth: 3
 --- !u!212 &1407207650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -453,6 +451,10 @@ PrefabInstance:
     - target: {fileID: 2116787085454171741, guid: 41e5978aa5f91774bb85a9d0eed6937c, type: 3}
       propertyPath: m_Name
       value: RootUserCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116787085454171742, guid: 41e5978aa5f91774bb85a9d0eed6937c, type: 3}
+      propertyPath: playerHealth
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

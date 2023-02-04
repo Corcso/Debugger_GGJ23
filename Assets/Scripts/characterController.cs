@@ -10,6 +10,7 @@ public class characterController : MonoBehaviour
     //public Transform playerTransform;
     public Rigidbody2D playerRigidbody;
     public int speed;
+    public int playerHealth;
 
     bool previousFireButton = false;
 
@@ -55,6 +56,12 @@ public class characterController : MonoBehaviour
         }
 
         previousFireButton = Input.GetButton("Fire1");
+
+
+        if (playerHealth == 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // Fire Bullet Function
@@ -73,5 +80,13 @@ public class characterController : MonoBehaviour
             firedBullet = Instantiate(oneBulletPrefab, this.transform.position + this.transform.up / 1.7f, Quaternion.Euler(0, 0, this.transform.rotation.eulerAngles.z + 90));
         }
         Destroy(firedBullet, 3);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            playerHealth--;
+        }
     }
 }

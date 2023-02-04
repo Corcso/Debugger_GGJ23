@@ -6,12 +6,9 @@ public class bugController : MonoBehaviour
 {
     public Transform playerTransform;
 
-    public Transform zeroBullet;
-    public Transform oneBullet;
-
     public Rigidbody2D enemyRigidbody;
     public int speed;
-    public int enemyHealth = 0;
+    public int enemyHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +38,15 @@ public class bugController : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        
+
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+         if (col.gameObject.tag == "Bullet")
+        {
+            enemyHealth--;
+        }
     }
 }
