@@ -28,6 +28,10 @@ public class bugController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.currentGameState == gameManager.gameState.paused) {
+            return;
+        }
+
         if (enemyHealth > 0)
         {
             // Move to player

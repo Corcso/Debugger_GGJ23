@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -24,18 +25,24 @@ public class MainMenuScript : MonoBehaviour
 
     public void PlayGame()
     {
-        Debug.Log("Play Game Presssed");
+        SceneManager.LoadScene("GameScene");
     }
 
     public GameObject optionsMenuObject;
+    public GameObject controlsButton;
+    public GameObject quitButton;
     public void ShowControls()
     {
         optionsMenuObject.SetActive(true);
+        controlsButton.SetActive(false);
+        quitButton.SetActive(false);
 
     }
 
     public void HideOptions()
     {
         optionsMenuObject.SetActive(false);
+        controlsButton.SetActive(true);
+        quitButton.SetActive(true);
     }
 }

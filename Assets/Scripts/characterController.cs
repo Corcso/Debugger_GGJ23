@@ -24,6 +24,11 @@ public class characterController : MonoBehaviour
     void Update()
     {
 
+        if (gameManager.currentGameState == gameManager.gameState.paused)
+        {
+            return;
+        }
+
         // Control X and Y movement
         float horizontalAxis = Input.GetAxis("Horizontal");
         float verticalAxis = Input.GetAxis("Vertical");
