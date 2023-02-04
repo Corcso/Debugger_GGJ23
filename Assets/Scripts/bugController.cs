@@ -90,6 +90,7 @@ public class bugController : MonoBehaviour
          if (col.gameObject.tag == "Bullet" && enemyHealth > 0)
         {
             enemyHealth--;
+            Destroy(col.gameObject);
         }
     }
 }
