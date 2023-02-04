@@ -8,13 +8,13 @@ public class MainMenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Function to Quit the game
@@ -27,8 +27,15 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("Play Game Presssed");
     }
 
+    public GameObject optionsMenuObject;
     public void ShowControls()
     {
-        Debug.Log("Show Controls Presssed");
+        optionsMenuObject.SetActive(true);
+
+    }
+
+    public void HideOptions()
+    {
+        optionsMenuObject.SetActive(false);
     }
 }
