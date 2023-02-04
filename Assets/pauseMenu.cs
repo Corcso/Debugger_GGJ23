@@ -34,7 +34,7 @@ public class pauseMenu : MonoBehaviour
             }
             else
             {
-                gameManager.currentGameState = gameManager.gameState.play
+                gameManager.currentGameState = gameManager.gameState.playing;
             }
         }
         previousEsc = Input.GetAxis("Cancel");
