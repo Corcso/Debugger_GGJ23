@@ -5,8 +5,13 @@ using UnityEngine;
 public class bugController : MonoBehaviour
 {
     public Transform playerTransform;
+
+    public Transform zeroBullet;
+    public Transform oneBullet;
+
     public Rigidbody2D enemyRigidbody;
     public int speed;
+    public int enemyHealth = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,11 @@ public class bugController : MonoBehaviour
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
 
         this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+
+        if (enemyHealth == 0)
+        {
+            Destroy(this.gameObject);
+        }
 
     }
 }
