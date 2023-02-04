@@ -27,8 +27,10 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("Play Game Presssed");
     }
 
+    public GameObject optionsMenuObject;
     public void ShowControls()
     {
-        Debug.Log("Show Controls Presssed");
+        optionsMenuObject.SetActive(true);
+
     }
 }
