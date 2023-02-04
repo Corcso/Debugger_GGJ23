@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class characterController : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class characterController : MonoBehaviour
 
         float AngleRad = Mathf.Atan2(mouseScreenPosition.y - this.transform.position.y, mouseScreenPosition.x - this.transform.position.x);
 
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        float AngleDeg = (180 / Mathf.PI) * AngleRad - 90; // -90 to get texture facing right way
 
         this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
 
@@ -50,8 +51,27 @@ public class characterController : MonoBehaviour
         
         if (Input.GetButton("Fire1") && !previousFireButton) {
             Debug.Log("FIRE");
+            fireRegular();
         }
 
         previousFireButton = Input.GetButton("Fire1");
+    }
+
+    // Fire Bullet Function
+    public GameObject zeroBulletPrefab;
+    public GameObject oneBulletPrefab;
+
+    void fireRegular() {
+        int choice = Random.Range(0,2);
+        GameObject firedBullet;
+        if (choice == 0)
+        {
+            firedBullet = Instantiate(zeroBulletPrefab, this.transform.position + this.transform.up / 1.7f , Quaternion.Euler(0, 0, this.transform.rotation.eulerAngles.z + 90));
+        }
+        else
+        {
+            firedBullet = Instantiate(oneBulletPrefab, this.transform.position + this.transform.up / 1.7f, Quaternion.Euler(0, 0, this.transform.rotation.eulerAngles.z + 90));
+        }
+        Destroy(firedBullet, 3);
     }
 }
