@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class bugController : MonoBehaviour
 {
+    public gameManager gameManager;
+
     public Transform playerTransform;
 
     public Rigidbody2D enemyRigidbody;
@@ -20,7 +22,7 @@ public class bugController : MonoBehaviour
     void Start()
     {
         bugRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-
+        gameManager = GameObject.Find("GameManager").GetComponent<gameManager>();
     }
 
     // Update is called once per frame
@@ -66,6 +68,7 @@ public class bugController : MonoBehaviour
                     {
                         bugRenderer.sprite = bugFrame[currentDeathFrame];
                         currentDeathFrame++;
+                        gameManager.killCounter++;
                     }
                     else if (currentDeathFrame == 3)
                     {
@@ -90,6 +93,7 @@ public class bugController : MonoBehaviour
          if (col.gameObject.tag == "Bullet" && enemyHealth > 0)
         {
             enemyHealth--;
+            Destroy(col.gameObject);
         }
     }
 }
