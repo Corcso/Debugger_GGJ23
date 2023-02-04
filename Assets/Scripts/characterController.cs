@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,6 +14,9 @@ public class characterController : MonoBehaviour
     public int playerHealth;
 
     bool previousFireButton = false;
+
+    public GameObject gameOverScreen;
+    public TextMeshProUGUI killCountText;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +69,11 @@ public class characterController : MonoBehaviour
 
         if (playerHealth == 0)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            gameManager.currentGameState = gameManager.gameState.paused;
+            killCountText.text = "Bugs Debugged: " + gameManager.killCounter;
+            gameOverScreen.SetActive(true);
+
         }
     }
 
