@@ -104,11 +104,11 @@ MonoBehaviour:
   speed: 600
   enemyHealth: 3
   bugFrame:
-  - {fileID: 21300000, guid: 2197cd80677ac3c4b99d583fc45fb502, type: 3}
+  - {fileID: 21300000, guid: e1bd4c34f2f8cec499872565a5ce7522, type: 3}
   - {fileID: 21300000, guid: fe46ed057eb2e724c9426330c204283d, type: 3}
-  - {fileID: 21300000, guid: f154ab45c94fdfa4f802dbceeda32872, type: 3}
+  - {fileID: 21300000, guid: c7c3b7f8c9faccd42b82369ddb3a0792, type: 3}
   - {fileID: 21300000, guid: 89a6b3e1368b3c94f98ba1b3fc3ac352, type: 3}
-  - {fileID: 21300000, guid: 1c25b77b96f06bb48badc5d1ab190576, type: 3}
+  - {fileID: 21300000, guid: 836d002ea5bd1a44685d3d92e7638e5b, type: 3}
   currentStepFrame: 0
   currentDeathFrame: 2
 --- !u!50 &915411582932968927
