@@ -2927,6 +2927,8 @@ MonoBehaviour:
   bugInterval: 2
   miniBugPrefab: {fileID: 5707816995579575979, guid: af5031f1eee7d4e4e8d68abc255de8ec, type: 3}
   miniBugInterval: 4
+  megaBugPrefab: {fileID: 1191711840803834044, guid: 1f57455b024965f44802e641f70cd2f8, type: 3}
+  megaBugInterval: 60
 --- !u!4 &1854314145
 Transform:
   m_ObjectHideFlags: 0

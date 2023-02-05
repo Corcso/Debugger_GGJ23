@@ -21,6 +21,8 @@ public class characterController : MonoBehaviour
     public TextMeshProUGUI killCounterText;
     public GameObject[] heartsObjects;
 
+    public AudioSource hurtSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -105,6 +107,7 @@ public class characterController : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             playerHealth--;
+            hurtSound.Play();
             heartsObjects[playerHealth].SetActive(false);
             Rigidbody2D enemyRigidbody = col.gameObject.GetComponent<Rigidbody2D>();
 
