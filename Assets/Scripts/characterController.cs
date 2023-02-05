@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 public class characterController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class characterController : MonoBehaviour
     public GameObject gameOverScreen;
     public TextMeshProUGUI finalKillCountText;
     public TextMeshProUGUI killCounterText;
+    public GameObject[] heartsObjects;
 
 
     // Start is called before the first frame update
@@ -103,6 +105,7 @@ public class characterController : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             playerHealth--;
+            heartsObjects[playerHealth].SetActive(false);
             Rigidbody2D enemyRigidbody = col.gameObject.GetComponent<Rigidbody2D>();
 
             enemyRigidbody.AddForce(col.gameObject.transform.up * -500);
