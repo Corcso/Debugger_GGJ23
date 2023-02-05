@@ -16,7 +16,9 @@ public class characterController : MonoBehaviour
     bool previousFireButton = false;
 
     public GameObject gameOverScreen;
-    public TextMeshProUGUI killCountText;
+    public TextMeshProUGUI finalKillCountText;
+    public TextMeshProUGUI killCounterText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +73,8 @@ public class characterController : MonoBehaviour
         {
             //Destroy(this.gameObject);
             gameManager.currentGameState = gameManager.gameState.paused;
-            killCountText.text = "Bugs Debugged: " + gameManager.killCounter;
+            finalKillCountText.text = "Bugs Debugged: " + gameManager.killCounter;
+            killCounterText.gameObject.SetActive(false);
             gameOverScreen.SetActive(true);
 
         }
