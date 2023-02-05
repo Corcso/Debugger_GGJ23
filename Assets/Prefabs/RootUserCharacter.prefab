@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2116787085454171681}
   m_Layer: 0
   m_Name: RootUserCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,9 +99,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebbcaaa11d20a54e9c3093b9572ecd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   playerRigidbody: {fileID: 2116787085454171681}
   speed: 900
   playerHealth: 5
+  gameOverScreen: {fileID: 0}
+  finalKillCountText: {fileID: 0}
+  killCounterText: {fileID: 0}
+  heartsObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   zeroBulletPrefab: {fileID: 9101529235323299904, guid: 3878b383459efe049827d76f034be8dc, type: 3}
   oneBulletPrefab: {fileID: 2311654321899998105, guid: 5cd1ddda869202e4eb2e0c5d5547b13c, type: 3}
 --- !u!61 &2116787085454171682
@@ -117,7 +127,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.011}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -128,7 +138,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.87, y: 0.84}
   m_EdgeRadius: 0
 --- !u!50 &2116787085454171681
 Rigidbody2D:

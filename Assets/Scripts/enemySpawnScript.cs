@@ -99,8 +99,8 @@ public class enemySpawnScript : MonoBehaviour
                     spawnY = Random.Range(-spawnMax.y + playerTransform.position.y, spawnMax.y + playerTransform.position.y);
                 }
 
-                spawnX = Mathf.Clamp(spawnX, -60, 60);
-                spawnY = Mathf.Clamp(spawnY, -60, 60);
+                spawnX = Mathf.Clamp(spawnX, -55, 55);
+                spawnY = Mathf.Clamp(spawnY, -55, 55);
 
 
                 for (float i = 0; i < 1.5f; i += 0.5f)
