@@ -13,6 +13,11 @@ public class enemySpawnScript : MonoBehaviour
     public GameObject bugPrefab;
     public float bugInterval = 2;
     float timeSinceLastSpawn = 0;
+
+    public GameObject miniBugPrefab;
+    public float miniBugInterval = 4;
+    float timeSinceLastMiniSpawn = 0;
+
     Vector2 spawnMin = new Vector2(10, 6);
     Vector2 spawnMax = new Vector2(40, 36);
 
@@ -66,6 +71,47 @@ public class enemySpawnScript : MonoBehaviour
                 bug.GetComponent<bugController>().playerTransform = playerTransform;
 
                 
+            }
+
+            miniBugInterval = 1 / (0.1f * Mathf.Log(gameManager.difficulty + 1));
+
+            if (Time.realtimeSinceStartup >= timeSinceLastMiniSpawn + miniBugInterval && gameManager.difficulty > 2.5f)
+            {
+                timeSinceLastMiniSpawn = Time.realtimeSinceStartup;
+
+                float spawnX = Random.Range(spawnMin.x + playerTransform.position.x, spawnMax.x + playerTransform.position.x);
+                float spawnY = Random.Range(spawnMin.y + playerTransform.position.y, spawnMax.y + playerTransform.position.y);
+
+                if (Random.Range(0, 2) == 0)
+                {
+                    spawnX = Random.Range(-spawnMin.x + playerTransform.position.x, -spawnMax.x + playerTransform.position.x);
+                }
+                if (Random.Range(0, 2) == 0)
+                {
+                    spawnY = Random.Range(-spawnMin.y + playerTransform.position.y, -spawnMax.y + playerTransform.position.y);
+                }
+                if (Random.Range(0, 2) == 0)
+                {
+                    spawnX = Random.Range(-spawnMax.x + playerTransform.position.x, spawnMax.x + playerTransform.position.x);
+                }
+                else
+                {
+                    spawnY = Random.Range(-spawnMax.y + playerTransform.position.y, spawnMax.y + playerTransform.position.y);
+                }
+
+                spawnX = Mathf.Clamp(spawnX, -55, 55);
+                spawnY = Mathf.Clamp(spawnY, -55, 55);
+
+
+                for (float i = 0; i < 1.5f; i += 0.5f)
+                {
+                    for (float j = 0; j < 1.5f; j += 0.5f)
+                    {
+                        GameObject bug = Instantiate(miniBugPrefab, new Vector3(spawnX + i, spawnY + j, 0), Quaternion.Euler(0, 0, 0));
+                        bug.GetComponent<miniBugControler>().playerTransform = playerTransform;
+                    }
+                }
+
             }
         }
     }

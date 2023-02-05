@@ -97,7 +97,7 @@ public class characterController : MonoBehaviour
         {
             firedBullet = Instantiate(oneBulletPrefab, this.transform.position + this.transform.up / 1.3f, Quaternion.Euler(0, 0, this.transform.rotation.eulerAngles.z + 90));
         }
-        Destroy(firedBullet, 3);
+        //Destroy(firedBullet, 3);
     }
 
     void OnCollisionEnter2D(Collision2D col)

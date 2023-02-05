@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class bugController : MonoBehaviour
+public class megaBug : MonoBehaviour
 {
     public gameManager gameManager;
 
@@ -34,7 +34,8 @@ public class bugController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.currentGameState == gameManager.gameState.paused) {
+        if (gameManager.currentGameState == gameManager.gameState.paused)
+        {
             return;
         }
 
@@ -70,39 +71,39 @@ public class bugController : MonoBehaviour
         }
 
         if (enemyHealth <= 0)
+        {
+            if (Time.realtimeSinceStartup >= timeSinceLastTstep + 0.2)
             {
-                if (Time.realtimeSinceStartup >= timeSinceLastTstep + 0.2)
+                timeSinceLastTstep = Time.realtimeSinceStartup;
+                if (currentDeathFrame == 2)
                 {
-                    timeSinceLastTstep = Time.realtimeSinceStartup;
-                    if (currentDeathFrame == 2)
-                    {
-                        bugRenderer.sprite = bugFrame[currentDeathFrame];
-                        currentDeathFrame++;
-                        gameManager.killCounter++;
-                        killCounterText.text = "Bugs Debugged: " + gameManager.killCounter;
-                        Destroy(enemyCollider); // Delete the collider so the bullets dont get caught on dead bugs
-                    }
-                    else if (currentDeathFrame == 3)
-                    {
-                        bugRenderer.sprite = bugFrame[currentDeathFrame];
-                        currentDeathFrame++;
-                    }
-                    else if (currentDeathFrame == 4)
-                    {
-                        bugRenderer.sprite = bugFrame[currentDeathFrame];
-                        currentDeathFrame++;
-                    }
-                    else if (currentDeathFrame == 5)
-                    {
-                        Destroy(this.gameObject);
-                    }
+                    bugRenderer.sprite = bugFrame[currentDeathFrame];
+                    currentDeathFrame++;
+                    gameManager.killCounter++;
+                    killCounterText.text = "Bugs Debugged: " + gameManager.killCounter;
+                    Destroy(enemyCollider); // Delete the collider so the bullets dont get caught on dead bugs
+                }
+                else if (currentDeathFrame == 3)
+                {
+                    bugRenderer.sprite = bugFrame[currentDeathFrame];
+                    currentDeathFrame++;
+                }
+                else if (currentDeathFrame == 4)
+                {
+                    bugRenderer.sprite = bugFrame[currentDeathFrame];
+                    currentDeathFrame++;
+                }
+                else if (currentDeathFrame == 5)
+                {
+                    Destroy(this.gameObject);
                 }
             }
         }
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-         if (col.gameObject.tag == "Bullet" && enemyHealth > 0)
+        if (col.gameObject.tag == "Bullet" && enemyHealth > 0)
         {
             enemyHealth--;
             Destroy(col.gameObject);
