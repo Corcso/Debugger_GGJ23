@@ -2845,6 +2845,8 @@ MonoBehaviour:
   playerTransform: {fileID: 1968992229}
   bugPrefab: {fileID: 915411582932968923, guid: f42e9b846d8c9a840a9bdd395ba89a5c, type: 3}
   bugInterval: 2
+  miniBugPrefab: {fileID: 5707816995579575979, guid: af5031f1eee7d4e4e8d68abc255de8ec, type: 3}
+  miniBugInterval: 4
 --- !u!4 &1854314145
 Transform:
   m_ObjectHideFlags: 0
