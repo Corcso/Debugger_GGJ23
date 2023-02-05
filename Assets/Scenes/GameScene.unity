@@ -184,7 +184,7 @@ MonoBehaviour:
   m_text: Pause
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
-  m_sharedMaterial: {fileID: 5052449876072240852, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
+  m_sharedMaterial: {fileID: -2018195566385174881, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_text: 'Bugs Debugged: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
-  m_sharedMaterial: {fileID: 5052449876072240852, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
+  m_sharedMaterial: {fileID: -2018195566385174881, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_text: Quit to menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
-  m_sharedMaterial: {fileID: 5052449876072240852, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
+  m_sharedMaterial: {fileID: -2018195566385174881, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1291,7 +1291,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
-  m_sharedMaterial: {fileID: 5052449876072240852, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
+  m_sharedMaterial: {fileID: -2018195566385174881, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2200,7 +2200,7 @@ MonoBehaviour:
   m_text: Quit to menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
-  m_sharedMaterial: {fileID: 5052449876072240852, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
+  m_sharedMaterial: {fileID: -2018195566385174881, guid: 1394fd0e515e3ad4cbc90602e9ac2314, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
