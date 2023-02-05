@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class bugController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class bugController : MonoBehaviour
     public Transform playerTransform;
 
     public Rigidbody2D enemyRigidbody;
+    public Collider2D enemyCollider;
     public int speed;
     public int enemyHealth;
     public Sprite[] bugFrame;
@@ -18,11 +20,15 @@ public class bugController : MonoBehaviour
 
     float timeSinceLastTstep = 0;
 
+    public TextMeshProUGUI killCounterText;
+
     // Start is called before the first frame update
     void Start()
     {
         bugRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         gameManager = GameObject.Find("GameManager").GetComponent<gameManager>();
+        killCounterText = GameObject.Find("KillCountText").GetComponent<TextMeshProUGUI>();
+        enemyCollider = this.gameObject.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -73,6 +79,8 @@ public class bugController : MonoBehaviour
                         bugRenderer.sprite = bugFrame[currentDeathFrame];
                         currentDeathFrame++;
                         gameManager.killCounter++;
+                        killCounterText.text = "Bugs Debugged: " + gameManager.killCounter;
+                        Destroy(enemyCollider); // Delete the collider so the bullets dont get caught on dead bugs
                     }
                     else if (currentDeathFrame == 3)
                     {

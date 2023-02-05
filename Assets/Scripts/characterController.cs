@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 public class characterController : MonoBehaviour
 {
@@ -16,7 +17,10 @@ public class characterController : MonoBehaviour
     bool previousFireButton = false;
 
     public GameObject gameOverScreen;
-    public TextMeshProUGUI killCountText;
+    public TextMeshProUGUI finalKillCountText;
+    public TextMeshProUGUI killCounterText;
+    public GameObject[] heartsObjects;
+
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +75,8 @@ public class characterController : MonoBehaviour
         {
             //Destroy(this.gameObject);
             gameManager.currentGameState = gameManager.gameState.paused;
-            killCountText.text = "Bugs Debugged: " + gameManager.killCounter;
+            finalKillCountText.text = "Bugs Debugged: " + gameManager.killCounter;
+            killCounterText.gameObject.SetActive(false);
             gameOverScreen.SetActive(true);
 
         }
@@ -92,7 +97,7 @@ public class characterController : MonoBehaviour
         {
             firedBullet = Instantiate(oneBulletPrefab, this.transform.position + this.transform.up / 1.3f, Quaternion.Euler(0, 0, this.transform.rotation.eulerAngles.z + 90));
         }
-        Destroy(firedBullet, 3);
+        //Destroy(firedBullet, 3);
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -100,6 +105,7 @@ public class characterController : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             playerHealth--;
+            heartsObjects[playerHealth].SetActive(false);
             Rigidbody2D enemyRigidbody = col.gameObject.GetComponent<Rigidbody2D>();
 
             enemyRigidbody.AddForce(col.gameObject.transform.up * -500);
