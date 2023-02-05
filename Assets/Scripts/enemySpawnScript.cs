@@ -13,6 +13,11 @@ public class enemySpawnScript : MonoBehaviour
     public GameObject bugPrefab;
     public float bugInterval = 2;
     float timeSinceLastSpawn = 0;
+
+    public GameObject miniBugPrefab;
+    public float miniBugInterval = 4;
+    float timeSinceLastMiniSpawn = 0;
+
     Vector2 spawnMin = new Vector2(10, 6);
     Vector2 spawnMax = new Vector2(40, 36);
 
