@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+
+    public AudioSource buttonClickSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void PlayGame()
     {
+        buttonClickSound.Play();
         SceneManager.LoadScene("preGameCutscene");
     }
 
@@ -33,6 +36,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject quitButton;
     public void ShowControls()
     {
+        buttonClickSound.Play();
         optionsMenuObject.SetActive(true);
         controlsButton.SetActive(false);
         quitButton.SetActive(false);
@@ -41,6 +45,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void HideOptions()
     {
+        buttonClickSound.Play();
         optionsMenuObject.SetActive(false);
         controlsButton.SetActive(true);
         quitButton.SetActive(true);
